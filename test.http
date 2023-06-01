@@ -1,0 +1,92 @@
+// USERS API //
+
+### GET (NEED AUTHENTICATION)
+GET http://localhost:4000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbnRAeWFob28uY29tIiwic3ViIjoxMywiaWF0IjoxNjg0NTE1NDU5LCJleHAiOjE2ODQ2MDE4NTl9.SqJbeNZIQJYTaQYPJj3Za9k8aOfchlHjj1P5VERmrgU
+
+
+### GET BY ID (NEED AUTHENTICATION)
+GET http://localhost:4000/users/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbnRAeWFob28uY29tIiwic3ViIjoxMywiaWF0IjoxNjg0NTE1NDU5LCJleHAiOjE2ODQ2MDE4NTl9.SqJbeNZIQJYTaQYPJj3Za9k8aOfchlHjj1P5VERmrgU
+
+
+### PATCH (NEED AUTHENTICATION AND AUTHORIZATION)
+PATCH http://localhost:4000/users/id
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbnRAeWFob28uY29tIiwic3ViIjoxMywiaWF0IjoxNjg0NTE1NDU5LCJleHAiOjE2ODQ2MDE4NTl9.SqJbeNZIQJYTaQYPJj3Za9k8aOfchlHjj1P5VERmrgU
+
+{
+  "email": "kent1@yahoo.com"
+}
+
+
+### DELETE (NEED AUTHENTICATION AND AUTHORIZATION)
+DELETE http://localhost:4000/users/id
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbnRAeWFob28uY29tIiwic3ViIjoxMywiaWF0IjoxNjg0NTE1NDU5LCJleHAiOjE2ODQ2MDE4NTl9.SqJbeNZIQJYTaQYPJj3Za9k8aOfchlHjj1P5VERmrgU
+
+
+
+// ITEMS API //
+
+### GET (PUBLIC API)
+GET http://localhost:4000/items
+
+### GET BY ID (PUBLIC API)
+GET http://localhost:4000/items/id
+
+### POST ITEM
+POST http://localhost:4000/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywibmFtZSI6ImdhbnRlbmciLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImdhbnRlbmdAZW1haWwuY29tIiwiaWF0IjoxNjg1NTQ5MTg2LCJleHAiOjE2ODU1NTI3ODZ9.NU3_L6vkUolU2IVH94KzfKqAXlfNertFY_aBW1yoydA
+
+{
+    "name": "halohalo",
+    "description": "halohalo",
+    "id_category": "1",
+    "quantity": 100,
+    "userId": 2
+}
+
+### PATCH (NEED AUTHENTICATION AND AUTHORIZATION)
+PATCH http://localhost:4000/items/id
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbnRAeWFob28uY29tIiwic3ViIjoxMywiaWF0IjoxNjg0NTE1NDU5LCJleHAiOjE2ODQ2MDE4NTl9.SqJbeNZIQJYTaQYPJj3Za9k8aOfchlHjj1P5VERmrgU
+
+
+{
+  "name": "Potato"
+}
+
+
+### DELETE (NEED AUTHENTICATION AND AUTHORIZATION)
+DELETE http://localhost:4000/items/id
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbnRAeWFob28uY29tIiwic3ViIjoxMywiaWF0IjoxNjg0NTE1NDU5LCJleHAiOjE2ODQ2MDE4NTl9.SqJbeNZIQJYTaQYPJj3Za9k8aOfchlHjj1P5VERmrgU
+
+
+
+// AUTH API //
+
+### REGISTER (PUBLIC API)
+POST http://localhost:4000/auth/register
+Content-Type: application/json
+
+{
+    "email":"ganteng@email.com",
+    "name": "ganteng",
+    "password": "ganteng",
+    "role": "ADMIN"
+}
+
+### LOGIN (PUBLIC API)
+POST http://localhost:4000/auth/login
+Content-Type: application/json
+
+{
+    "email": "ganteng@email.com",
+    "password":"ganteng"
+}
+
+
+

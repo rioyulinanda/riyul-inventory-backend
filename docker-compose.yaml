@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+    database:
+        image: postgres:alpine
+        container_name: inventory-backend-database
+        hostname: database
+        volumes:
+            - postgres:/var/lib/postgresql/data
+        ports:
+            - 5432:5432
+        env_file:
+            - .env
+        restart: always
+
+    app:
+        image: asia-southeast1-docker.pkg.dev/inventory-backend-388514/docker/inventory-backend
+        container_name: inventory-backend-app
+        build: .
+        ports:
+            - 80:4000
+            - 443:4000
+            - 4000:4000
+        env_file:
+            - .env
+        depends_on:
+            - database
+        restart: always
+
+volumes:
+    postgres:
